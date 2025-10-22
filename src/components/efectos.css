@@ -1,0 +1,16 @@
+/* Glow effect for neon look */
+@layer utilities {
+  .glow-effect {
+    box-shadow: 0 0 10px 2px rgba(255, 255, 0, 0.7);
+    animation: neon-glow 1.5s infinite alternate;
+  }
+
+  @keyframes neon-glow {
+    0% {
+      box-shadow: 0 0 4px 2px rgba(255, 255, 0, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 10px 1px rgba(255, 255, 0, 1);
+    }
+  }
+}

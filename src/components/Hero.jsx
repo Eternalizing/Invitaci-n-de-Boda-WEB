@@ -1,4 +1,6 @@
 import React from 'react'
+import Countdown from './Countdown'
+
 
 'use client'
 
@@ -17,7 +19,13 @@ export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-gray-900">
+    <div
+  className="relative bg-gray-900 bg-cover bg-center"
+  style={{
+    backgroundImage: "url('/img/Portada.png')",
+  }}
+>
+
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
@@ -126,11 +134,11 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-              Data to enrich your online business
+              Leandro Padilla & Marli Rodríguez
             </h1>
+            <Countdown></Countdown>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat.
+              ¡Nos casamos!
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
