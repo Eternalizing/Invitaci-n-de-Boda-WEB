@@ -77,7 +77,7 @@ export default function section1() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\b2.jpg"
+                          src="\img\b2.jpg"
                           className="size-full object-cover"
                         />
                       </div>
