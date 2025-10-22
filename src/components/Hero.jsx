@@ -133,12 +133,12 @@ export default function Hero() {
             </div>
           </div>
           <div className="text-center">
-            <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-              Leandro Padilla & Marli Rodríguez
+            <h1 className="text-2xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
+              “Así que ya no son dos, sino una sola carne;
+por tanto, lo que Dios unió, no lo separe el hombre.”
             </h1>
-            <Countdown></Countdown>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-              ¡Nos casamos!
+              Leandro Padilla & Marli Rodríguez
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
