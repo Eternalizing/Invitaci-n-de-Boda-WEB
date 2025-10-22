@@ -132,8 +132,8 @@ por tanto, lo que Dios unió, no lo separe el hombre.”
               </div>      
             
 
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-              Leandro Padilla & Marli Rodríguez
+            <p className="mt-8 text-lg font-medium text-pretty text-gray-0 sm:text-xl/8 bg-gradient-to-r from-yellow-500 to-yellow-300 ">
+              Acompáñanos a celebrar el sacramento del matrimonio ante Dios.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
