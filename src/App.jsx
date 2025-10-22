@@ -12,6 +12,8 @@ function App() {
   return (
     <>
       <Hero></Hero>
+      <Section1></Section1>
+     
 
     </>
   )

@@ -30,7 +30,7 @@ export default function Countdown() {
 
   return (
     <div className="flex flex-col items-center justify-center text-center py-4">
-        <h2 className="text-2xl font-bold mb-4 bg-[#D4AF37] px-4 rounded-2xl text-white opacity-80" > 20 de diciembre de 2025 </h2>
+ 
       <div className="bg-white p-5 rounded-2xl shadow-xl border-0 border-yellow-400 glow-effect opacity-90">
 
 
