@@ -31,7 +31,7 @@ export default function section1() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                         <img
                           alt=""
-                          src="public\img\a1.jpg"
+                          src="img\a1.jpg"
                           className="size-full object-cover"
                         />
                       </div>
