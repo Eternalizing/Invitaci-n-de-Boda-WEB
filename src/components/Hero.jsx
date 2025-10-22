@@ -124,7 +124,7 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <div class="card">
-              <h1 className="bg text-2xl font-semibold tracking-tight text-balance text-[#3D5A40] sm:text-7xl py-1">
+              <h1 className="bg text-2xl font-semibold tracking-tight text-balance text-[#3D5A40] sm:text-4xl py-1">
               “Así que ya no son dos, sino una sola carne;
 por tanto, lo que Dios unió, no lo separe el hombre.”
             </h1>
