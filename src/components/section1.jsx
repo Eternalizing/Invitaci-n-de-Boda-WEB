@@ -38,7 +38,7 @@ export default function section1() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\a2.jpg"
+                          src="img\a2.jpg"
                           className="size-full object-cover"
                         />
                       </div>
@@ -47,21 +47,21 @@ export default function section1() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\a3.jpg"
+                          src="img\a3.jpg"
                           className="size-full object-cover"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\b5.jpg"
+                          src="img\b5.jpg"
                           className="size-full object-cover"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\a4.jpg"
+                          src="img\a4.jpg"
                           className="size-full object-cover"
                         />
                       </div>
@@ -70,14 +70,14 @@ export default function section1() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\a4.jpg"
+                          src="img\a4.jpg"
                           className="size-full object-cover"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="\img\b2.jpg"
+                          src="img\b2.jpg"
                           className="size-full object-cover"
                         />
                       </div>
