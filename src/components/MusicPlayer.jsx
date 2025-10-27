@@ -43,7 +43,7 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
       audioRef.current.play().catch(() => {});
     }
     setPlaying(!playing);
-    setShowArrow(false); // ocultar flecha al interactuar
+    setShowArrow(false);
   };
 
   return (
@@ -67,7 +67,6 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
           boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
         }}
       >
-        {/* ⬅️ Flecha animada que apunta al botón */}
         {showArrow && (
           <motion.div
             initial={{ opacity: 0, x: -10 }}
@@ -89,7 +88,6 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
           </motion.div>
         )}
 
-        {/* 🔊 Botón de play/pausa */}
         <div
           onClick={togglePlay}
           style={{ cursor: "pointer" }}
@@ -98,7 +96,6 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
           {playing ? <Volume2 size={28} /> : <VolumeX size={28} />}
         </div>
 
-        {/* Control de volumen */}
         <input
           type="range"
           min="0"
@@ -108,7 +105,7 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
           onChange={(e) => setVolume(parseFloat(e.target.value))}
           style={{
             width: "80px",
-            accentColor: "#d45ba0",
+            accentColor: "#14532d",
             cursor: "pointer",
           }}
         />
@@ -123,7 +120,7 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
         style={{
           position: "fixed",
           bottom: "30px",
-          left: "2%",
+           left:"2%",
           transform: "translateX(-50%)",
           zIndex: 99999,
           display: "flex",
@@ -132,17 +129,18 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
           gap: "5px",
         }}
       >
-        {/* Confirmar asistencia */}
+        {/* ✅ Confirmar asistencia */}
         <a
           href={confirmUrl || "#"}
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            background: "linear-gradient(135deg, #e84393, #ff7675)",
+            backgroundColor: "#14532d", // verde oscuro sólido
             color: "white",
-            padding: "12px 10px",
+            padding: "12px 18px",
             borderRadius: "9999px",
             width: "200px",
+           
             fontWeight: "600",
             fontSize: "0.9rem",
             textDecoration: "none",
@@ -150,39 +148,46 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
             transition: "all 0.3s ease",
             display: "flex",
             alignItems: "center",
-            gap: "4px",
             justifyContent: "center",
+            gap: "5px",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = 0.85)}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = 1)}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#166534")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#14532d")}
         >
           <Heart size={16} />
           Confirmar Asistencia
         </a>
 
-        {/* Ver ubicación */}
+        {/* 📍 Ver ubicación */}
         <a
           href={locationUrl || "#"}
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            background: "linear-gradient(135deg, #74b9ff, #0984e3)",
-            color: "white",
-            padding: "12px 10px",
+            backgroundColor: "#ffffff",
+            color: "#14532d",
+            border: "2px solid #14532d",
+            padding: "12px 18px",
             width: "140px",
             borderRadius: "9999px",
             fontWeight: "600",
-            fontSize: "0.95rem",
+            fontSize: "0.9rem",
             textDecoration: "none",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
             transition: "all 0.3s ease",
             display: "flex",
             alignItems: "center",
-            gap: "4px",
             justifyContent: "center",
+            gap: "6px",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = 0.85)}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = 1)}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#14532d";
+            e.currentTarget.style.color = "#ffffff";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "#ffffff";
+            e.currentTarget.style.color = "#14532d";
+          }}
         >
           <MapPin size={16} />
           Ubicación

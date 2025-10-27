@@ -9,7 +9,7 @@ export default function Hero() {
       className="relative flex flex-col justify-center items-center bg-cover bg-center"
       style={{
         backgroundImage: "url('/img/Portada.png')",
-        backgroundColor: "#fff0f6",
+        backgroundColor: "#eaf6ef", // Fondo verde muy claro
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -30,7 +30,7 @@ export default function Hero() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
               className="relative rounded-full px-4 py-1 text-sm 
-                         text-[#4a3c3c] bg-white/90 ring-1 ring-[#f48fb1]/30 
+                         text-[#2f3b2f] bg-white ring-1 ring-[#8fcba5]/40 
                          backdrop-blur-sm shadow-sm"
             >
               — Mateo 19:6
@@ -45,8 +45,7 @@ export default function Hero() {
             transition={{ delay: 1, duration: 1 }}
           >
             <h1
-              className="bg-gradient-to-r from-[#ffe6eb]/95 to-[#ffd7f0]/80 
-                         text-[#3a2d2d] text-2xl font-semibold tracking-tight sm:text-4xl 
+              className="bg-[#bde0c8] text-[#2f3b2f] text-2xl font-semibold tracking-tight sm:text-4xl 
                          py-4 px-6 rounded-2xl shadow-lg backdrop-blur-sm ring-1 ring-white/50"
             >
               “Así que ya no son dos, sino una sola carne; por tanto, lo que Dios unió, no lo separe el hombre.”
@@ -55,14 +54,14 @@ export default function Hero() {
 
           {/* Subtítulo */}
           <motion.p
-            className="mt-10 inline-block bg-gradient-to-r from-[#d81b60]/90 to-[#f48fb1]/80 
+            className="mt-10 inline-block bg-[#6abf69] 
                        text-white text-lg font-medium sm:text-xl py-2 px-8 
                        rounded-full shadow-md backdrop-blur-sm ring-1 ring-white/30"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            ¡Nos casamos! el 20 de diciembre de 2025
+            ¡Nos casamos! el <strong>20 de diciembre de 2025</strong>
           </motion.p>
 
           {/* Countdown */}
@@ -88,7 +87,7 @@ export default function Hero() {
             }}
             className="relative left-[calc(50%+3rem)] aspect-[1155/678] 
               w-[144.5rem] -translate-x-1/2 
-              bg-gradient-to-tr from-[#f48fb1] to-[#74b9ff] opacity-30 
+              bg-[#6abf69] opacity-25 
               sm:left-[calc(50%+36rem)] sm:w-[288.75rem]"
           />
         </div>
