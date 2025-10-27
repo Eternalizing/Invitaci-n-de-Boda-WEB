@@ -29,22 +29,7 @@ export default function Section4() {
               Tu presencia será el mejor regalo que podamos recibir.
             </p>
 
-            <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <a
-                href="https://wa.me/584120000000?text=%C2%A1Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Leandro%20y%20Marli!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-md bg-gradient-to-r from-[#f48fb1] to-[#e84393] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 shadow-md transition"
-              >
-                Confirmar asistencia
-              </a>
-              <a
-                href="#inicio"
-                className="text-sm font-semibold text-[#3a2d2d] hover:text-[#e84393]"
-              >
-                Volver al inicio <span aria-hidden="true">→</span>
-              </a>
-            </div>
+            
           </div>
 
           {/* Imagen decorativa */}
