@@ -6,22 +6,38 @@ export default function Loader() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Duración del loader (3 segundos)
-    const timer = setTimeout(() => setLoading(false), 6000)
-    return () => clearTimeout(timer)
+    // Bloquea el scroll
+    document.body.style.overflow = 'hidden'
+
+    // Espera a que la imagen principal esté cargada
+    const img = new Image()
+    img.src = '/img/Portada.png' // cambia por la imagen importante
+    img.onload = () => {
+      setTimeout(() => {
+        setLoading(false)
+        document.body.style.overflow = 'auto'
+      }, 500) // un pequeño delay para suavizar
+    }
+
+    // seguridad: si tarda mucho (10s), quitar loader igual
+    const timeout = setTimeout(() => {
+      setLoading(false)
+      document.body.style.overflow = 'auto'
+    }, 10000)
+
+    return () => clearTimeout(timeout)
   }, [])
 
   if (!loading) return null
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#fce4ec] via-[#f8bbd0] to-[#fff0f5]"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-[#fce4ec] via-[#f8bbd0] to-[#fff0f5]"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Corazón animado */}
       <motion.div
         className="flex flex-col items-center"
         initial={{ scale: 0 }}
@@ -39,7 +55,7 @@ export default function Loader() {
         >
           ❤️
         </motion.div>
-        <p className="mt-4 text-[#3D5A40] text-lg font-semibold tracking-wide">
+        <p className="mt-4 text-[#14532d] text-lg font-semibold tracking-wide">
           Cargando con amor...
         </p>
       </motion.div>
