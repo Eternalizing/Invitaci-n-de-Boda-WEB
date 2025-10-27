@@ -1,83 +1,98 @@
-
-
-
 'use client'
 
+import { motion } from 'framer-motion'
 import Countdown from './countdown'
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-
-
 
 export default function Hero() {
- 
-
   return (
-    <div
-  className="relative bg-gray-900 bg-cover bg-center"
-  style={{
-    backgroundImage: "url('/img/Portada.png')",
-  }}
->
-
-    
-
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+    <motion.div
+      className="relative flex flex-col justify-center items-center bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/img/Portada.png')",
+        backgroundColor: "#fff0f6",
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, ease: 'easeOut' }}
+    >
+      <div className="relative isolate px-6 pt-14 lg:px-8 min-h-screen w-screen">
+        {/* Contenido central */}
+        <motion.div
+          className="mx-auto max-w-2xl py-20 sm:py-32 lg:py-40 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
         >
-         
-        </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className=" sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm/6 text-black ring-1 ring-white/10 hover:ring-white/20">
+          {/* Versículo */}
+          <div className="sm:mb-8 sm:flex sm:justify-center">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="relative rounded-full px-4 py-1 text-sm 
+                         text-[#4a3c3c] bg-white/90 ring-1 ring-[#f48fb1]/30 
+                         backdrop-blur-sm shadow-sm"
+            >
               — Mateo 19:6
-            
-            </div>
+            </motion.div>
           </div>
-          <div className="text-center">
-            <div class="card">
-              <h1 className="bg text-2xl font-semibold tracking-tight text-balance text-[#3D5A40] sm:text-4xl py-1">
-              “Así que ya no son dos, sino una sola carne;
-por tanto, lo que Dios unió, no lo separe el hombre.”
-            </h1>
-            <div class="blob"></div>
-              </div>      
-            
 
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-0 sm:text-xl/8 bg-white ">
-             Próximamente 20 de diciembre de 2025
-            </p>
-            <Countdown></Countdown>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              >
-                Confirmar Asistencia
-              </a>
-              <a href="#" className="text-sm/6 font-semibold text-black px-3.5 py-2.5 rounded-md bg-white">
-                Lugar <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
+          {/* Frase principal */}
+          <motion.div
+            className="card mt-6 flex justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            <h1
+              className="bg-gradient-to-r from-[#ffe6eb]/95 to-[#ffd7f0]/80 
+                         text-[#3a2d2d] text-2xl font-semibold tracking-tight sm:text-4xl 
+                         py-4 px-6 rounded-2xl shadow-lg backdrop-blur-sm ring-1 ring-white/50"
+            >
+              “Así que ya no son dos, sino una sola carne; por tanto, lo que Dios unió, no lo separe el hombre.”
+            </h1>
+          </motion.div>
+
+          {/* Subtítulo */}
+          <motion.p
+            className="mt-10 inline-block bg-gradient-to-r from-[#d81b60]/90 to-[#f48fb1]/80 
+                       text-white text-lg font-medium sm:text-xl py-2 px-8 
+                       rounded-full shadow-md backdrop-blur-sm ring-1 ring-white/30"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            ¡Nos casamos! el 20 de diciembre de 2025
+          </motion.p>
+
+          {/* Countdown */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+          >
+            <Countdown />
+          </motion.div>
+        </motion.div>
+
+        {/* Decoración inferior */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 
+                     transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         >
           <div
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
             }}
-            className="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"
+            className="relative left-[calc(50%+3rem)] aspect-[1155/678] 
+              w-[144.5rem] -translate-x-1/2 
+              bg-gradient-to-tr from-[#f48fb1] to-[#74b9ff] opacity-30 
+              sm:left-[calc(50%+36rem)] sm:w-[288.75rem]"
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
-

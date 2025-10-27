@@ -1,50 +1,60 @@
-
 export default function Section4() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gradient-to-b from-[#fff0f6] to-[#ffe4ec]">
       <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="relative isolate overflow-hidden bg-gray-800 px-6 pt-16 after:pointer-events-none after:absolute after:inset-0 after:inset-ring after:inset-ring-white/10 sm:rounded-3xl sm:px-16 after:sm:rounded-3xl md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+        <div className="relative isolate overflow-hidden bg-white/10 px-6 pt-16 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-20 backdrop-blur-lg ring-1 ring-white/30 shadow-xl">
+          {/* Fondo decorativo suave */}
           <svg
             viewBox="0 0 1024 1024"
             aria-hidden="true"
-            className="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+            className="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 opacity-40 mask-[radial-gradient(closest-side,white,transparent)]"
           >
-            <circle r={512} cx={512} cy={512} fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fillOpacity="0.7" />
+            <circle r={512} cx={512} cy={512} fill="url(#love-gradient)" fillOpacity="0.7" />
             <defs>
-              <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                <stop stopColor="#7775D6" />
-                <stop offset={1} stopColor="#E935C1" />
+              <radialGradient id="love-gradient">
+                <stop stopColor="#f48fb1" />
+                <stop offset={1} stopColor="#f8bbd0" />
               </radialGradient>
             </defs>
           </svg>
+
+          {/* Contenido principal */}
           <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-            <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-              Boost your productivity. Start using our app today.
+            <h2 className="text-4xl font-bold tracking-tight text-[#3a2d2d] sm:text-5xl">
+              ¡Te esperamos!
             </h2>
-            <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-              Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
+            <p className="mt-6 text-lg text-[#4a3c3c] leading-relaxed">
+              Estamos felices de compartir este momento tan especial contigo.  
+              Cada sonrisa, abrazo y palabra harán de este día un recuerdo inolvidable.  
+              Tu presencia será el mejor regalo que podamos recibir.
             </p>
+
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <a
-                href="#"
-                className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                href="https://wa.me/584120000000?text=%C2%A1Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Leandro%20y%20Marli!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-gradient-to-r from-[#f48fb1] to-[#e84393] px-6 py-3 text-sm font-semibold text-white hover:opacity-90 shadow-md transition"
               >
-                {' '}
-                Get started{' '}
+                Confirmar asistencia
               </a>
-              <a href="#" className="text-sm/6 font-semibold text-white hover:text-gray-100">
-                Learn more
-                <span aria-hidden="true">→</span>
+              <a
+                href="#inicio"
+                className="text-sm font-semibold text-[#3a2d2d] hover:text-[#e84393]"
+              >
+                Volver al inicio <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
-          <div className="relative mt-16 h-80 lg:mt-8">
+
+          {/* Imagen decorativa */}
+          <div className="relative mt-16 h-80 lg:mt-8 flex items-center justify-center">
             <img
-              alt="App screenshot"
-              src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
+              alt="Decoración floral"
+              src="/img/floral-decor.png"
               width={1824}
               height={1080}
-              className="absolute top-0 left-0 w-228 max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+              className="absolute top-0 left-0 w-228 max-w-none rounded-xl bg-white/20 ring-1 ring-white/30 shadow-lg object-cover"
             />
           </div>
         </div>
