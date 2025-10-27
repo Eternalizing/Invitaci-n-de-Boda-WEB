@@ -36,7 +36,7 @@ export default function Section4() {
           <div className="relative mt-16 h-80 lg:mt-8 flex items-center justify-center">
             <img
               alt="Decoración floral"
-              src="/img/floral-decor.png"
+              src="/img/b1.jpg"
               width={1824}
               height={1080}
               className="absolute top-0 left-0 w-228 max-w-none rounded-xl bg-white/20 ring-1 ring-white/30 shadow-lg object-cover"

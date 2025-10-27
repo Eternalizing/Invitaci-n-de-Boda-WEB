@@ -15,7 +15,7 @@ export default function Hero() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2, ease: 'easeOut' }}
     >
-      <div className="relative isolate px-6 pt-14 lg:px-8 min-h-screen w-screen">
+      <div className="relative isolate px-6 pt-14 lg:px-8 min-h-screen w-screen ">
         {/* Contenido central */}
         <motion.div
           className="mx-auto max-w-2xl py-20 sm:py-32 lg:py-40 text-center"

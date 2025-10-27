@@ -42,16 +42,16 @@ export default function Section1() {
                         whileHover={{ scale: 1.05 }}
                         className="h-64 w-44 overflow-hidden rounded-xl ring-1 ring-[#f8bbd0]/50 shadow-md shadow-pink-100 sm:opacity-0 lg:opacity-100"
                       >
-                        <img alt="" src="img/a1.jpg" className="size-full object-cover brightness-95 hover:brightness-105 transition-all duration-500" />
+                        <img alt="" src="img/blanco1.jpg" className="size-full object-cover brightness-95 hover:brightness-105 transition-all duration-500" />
                       </motion.div>
                       <motion.div whileHover={{ scale: 1.05 }} className="h-64 w-44 overflow-hidden rounded-xl ring-1 ring-[#f8bbd0]/50 shadow-md shadow-pink-100">
-                        <img alt="" src="img/a2.jpg" className="size-full object-cover brightness-95 hover:brightness-105 transition-all duration-500" />
+                        <img alt="" src="img/blanco2.jpg" className="size-full object-cover brightness-95 hover:brightness-105 transition-all duration-500" />
                       </motion.div>
                     </div>
 
                     {/* Columna 2 */}
                     <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                      {["img/a3.jpg", "img/b5.jpg", "img/a4.jpg"].map((src, i) => (
+                      {["img/blanco7.jpg", "img/blanco3.jpg", "img/blanco4.jpg"].map((src, i) => (
                         <motion.div
                           key={i}
                           whileHover={{ scale: 1.05 }}
@@ -64,7 +64,7 @@ export default function Section1() {
 
                     {/* Columna 3 */}
                     <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                      {["img/a4.jpg", "img/b2.jpg"].map((src, i) => (
+                      {["img/a4.jpg", "img/blanco5.jpg"].map((src, i) => (
                         <motion.div
                           key={i}
                           whileHover={{ scale: 1.05 }}
@@ -79,15 +79,7 @@ export default function Section1() {
               </div>
 
               {/* Botón */}
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="#"
-                className="inline-block rounded-md bg-gradient-to-r from-[#f8bbd0] to-[#fce4ec] 
-                           px-8 py-3 text-center font-medium text-[#3D5A40] shadow-md 
-                           hover:shadow-pink-200 hover:brightness-105 transition-all duration-300"
-              >
-                Confirmar Asistencia
-              </motion.a>
+              
             </div>
           </div>
         </div>

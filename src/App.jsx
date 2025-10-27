@@ -18,7 +18,7 @@ function App() {
       {/* Efecto de flores (detrás de todo) */}
       <FlowerCanvas
         count={45}
-        imageSrc="public/img/flor1.png"
+        imageSrc="img/flor1.png"
         speedFactor={1}
       />
 
