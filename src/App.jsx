@@ -34,7 +34,7 @@ function App() {
       {/* Botón de música y confirmación */}
       <MusicAndConfirm
         musicSrc="music/Que Más Puedo Pedir.mp3"
-        confirmUrl="https://tuenlace.com/formulario"
+        confirmUrl="https://docs.google.com/forms/d/e/1FAIpQLSdyItW5FTRkJdvd78Cg_J89z76kYfFUAMJd_-nu0-i3vmfYWw/viewform?usp=header"
         locationUrl="https://maps.app.goo.gl/vz1wGCvoSEDr2oex9"
       />
     </>

@@ -48,7 +48,7 @@ export default function Section2() {
                 </p>
                 <p className="mt-2 text-sm text-white/90 max-lg:text-center leading-relaxed">
                   Parroquia San Juan Bautista<br />
-                  Sábado 20 de diciembre, 2025 — 4:00 p.m.
+                  Sábado 20 de diciembre 2025
                 </p>
               </div>
               <div className="relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
@@ -108,7 +108,7 @@ export default function Section2() {
                 <p className="mt-2 text-sm text-white/90 text-center leading-relaxed">
                   Acompáñanos a continuar la celebración en el <br />
                   <strong>Salón de Fiesta Varsovias</strong> <br />
-                  Desde las 6:00 p.m.
+                  
                 </p>
               </div>
               <div className="relative flex-1 items-center max-lg:py-6 lg:pb-2">
