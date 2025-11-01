@@ -12,8 +12,6 @@ import './App.css'
 function App() {
   return (
     <>
-      {/* Loader antes de todo */}
-      <Loader />
 
       {/* Efecto de flores (detrás de todo) */}
       <FlowerCanvas

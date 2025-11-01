@@ -1,23 +1,29 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Volume2, VolumeX, Heart, MapPin, ArrowRight } from "lucide-react";
+import { Volume2, VolumeX, Heart, MapPin } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 
 export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
   const [playing, setPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5);
-  const [showArrow, setShowArrow] = useState(true);
+  const [showStartButton, setShowStartButton] = useState(true);
   const audioRef = useRef(null);
   const controlsTop = useAnimation();
   const controlsBottom = useAnimation();
 
-  // Ajustar volumen
+  // 🔒 Bloquear scroll mientras el botón está activo
   useEffect(() => {
-    if (audioRef.current) audioRef.current.volume = volume;
-  }, [volume]);
+    if (showStartButton) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showStartButton]);
 
-  // Animación al hacer scroll
+  // 🎞 Animación de controles según scroll
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
@@ -34,7 +40,19 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [controlsTop, controlsBottom]);
 
-  // Reproducir / pausar música
+  // ▶️ Iniciar música
+  const startMusic = async () => {
+    if (!audioRef.current) return;
+    try {
+      await audioRef.current.play();
+      setPlaying(true);
+      setShowStartButton(false);
+    } catch (err) {
+      console.log("Autoplay bloqueado:", err);
+    }
+  };
+
+  // ⏯ Alternar play / pause
   const togglePlay = () => {
     if (!audioRef.current) return;
     if (playing) {
@@ -43,156 +61,157 @@ export default function MusicAndConfirm({ musicSrc, confirmUrl, locationUrl }) {
       audioRef.current.play().catch(() => {});
     }
     setPlaying(!playing);
-    setShowArrow(false);
   };
 
   return (
     <>
-      {/* 🎵 Botón de música (arriba derecha) */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={controlsTop}
-        style={{
-          position: "fixed",
-          top: "20px",
-          right: "20px",
-          zIndex: 99999,
-          background: "rgba(255,255,255,0.3)",
-          backdropFilter: "blur(8px)",
-          borderRadius: "16px",
-          padding: "10px 15px",
-          display: "flex",
-          alignItems: "center",
-          gap: "10px",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
-        }}
-      >
-        {showArrow && (
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={{
-              opacity: [0.3, 1, 0.3],
-              x: [-5, 0, -5],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            style={{
-              color: "#000",
-              textShadow: "0 0 6px rgba(0,0,0,0.4)",
-            }}
-          >
-            <ArrowRight size={22} />
-          </motion.div>
-        )}
-
-        <div
-          onClick={togglePlay}
-          style={{ cursor: "pointer" }}
-          title={playing ? "Pausar música" : "Reproducir música"}
+      {/* 💌 Botón inicial con fondo translúcido */}
+      {showStartButton && (
+        <motion.div
+          className="fixed inset-0 z-[99999] flex items-center justify-center 
+                     bg-[#eaf6ef]/80 backdrop-blur-md backdrop-saturate-150"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: showStartButton ? 1 : 0 }}
+          transition={{ duration: 1 }}
         >
-          {playing ? <Volume2 size={28} /> : <VolumeX size={28} />}
-        </div>
+          <motion.button
+            onClick={startMusic}
+            className="px-10 py-5 rounded-3xl bg-white/25 text-[#14532d] font-semibold text-xl
+                       shadow-lg ring-1 ring-white/40 backdrop-blur-xl border border-white/30
+                       flex items-center gap-2 hover:bg-white/35 hover:shadow-2xl 
+                       transition-all duration-300 ease-in-out"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            💌 ¡Abrir Invitación!
+          </motion.button>
+        </motion.div>
+      )}
 
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={volume}
-          onChange={(e) => setVolume(parseFloat(e.target.value))}
+      {/* 🔊 Control de música (arriba derecha) */}
+      {!showStartButton && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={controlsTop}
           style={{
-            width: "80px",
-            accentColor: "#14532d",
+            position: "fixed",
+            top: "20px",
+            right: "20px",
+            zIndex: 9999,
+            background: "rgba(255,255,255,0.4)",
+            backdropFilter: "blur(8px)",
+            borderRadius: "16px",
+            padding: "10px 15px",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
             cursor: "pointer",
           }}
-        />
+          onClick={togglePlay}
+          title={playing ? "Pausar música" : "Reproducir música"}
+        >
+          <motion.div
+            animate={
+              playing
+                ? { scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }
+                : { scale: 1, opacity: 1 }
+            }
+            transition={
+              playing
+                ? { repeat: Infinity, duration: 1.2, ease: "easeInOut" }
+                : {}
+            }
+          >
+            {playing ? <Volume2 size={26} /> : <VolumeX size={26} />}
+          </motion.div>
+        </motion.div>
+      )}
 
-        <audio ref={audioRef} src={musicSrc} loop preload="auto" />
-      </motion.div>
+      {/* 🎵 Audio */}
+      <audio ref={audioRef} src={musicSrc} loop preload="auto" />
 
-      {/* 💌 Botones inferiores */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={controlsBottom}
-        style={{
-          position: "fixed",
-          bottom: "30px",
-           left:"2%",
-          transform: "translateX(-50%)",
-          zIndex: 99999,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "5px",
-        }}
-      >
-        {/* ✅ Confirmar asistencia */}
-        <a
-          href={confirmUrl || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* 💍 Botones inferiores */}
+      {!showStartButton && (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={controlsBottom}
           style={{
-            backgroundColor: "#14532d", // verde oscuro sólido
-            color: "white",
-            padding: "12px 18px",
-            borderRadius: "9999px",
-            width: "200px",
-           
-            fontWeight: "600",
-            fontSize: "0.9rem",
-            textDecoration: "none",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
-            transition: "all 0.3s ease",
+            position: "fixed",
+            bottom: "30px",
+            left: "2%",
+            zIndex: 9999,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             gap: "5px",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#166534")}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#14532d")}
         >
-          <Heart size={16} />
-          Confirmar Asistencia
-        </a>
+          {/* Confirmar asistencia */}
+          <a
+            href={confirmUrl || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#14532d",
+              color: "white",
+              padding: "12px 18px",
+              borderRadius: "9999px",
+              width: "200px",
+              fontWeight: "600",
+              fontSize: "0.9rem",
+              textDecoration: "none",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+              transition: "all 0.3s ease",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "5px",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#166534")}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#14532d")}
+          >
+            <Heart size={16} />
+            Confirmar Asistencia
+          </a>
 
-        {/* 📍 Ver ubicación */}
-        <a
-          href={locationUrl || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            backgroundColor: "#ffffff",
-            color: "#14532d",
-            border: "2px solid #14532d",
-            padding: "12px 18px",
-            width: "140px",
-            borderRadius: "9999px",
-            fontWeight: "600",
-            fontSize: "0.9rem",
-            textDecoration: "none",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-            transition: "all 0.3s ease",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "6px",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#14532d";
-            e.currentTarget.style.color = "#ffffff";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "#ffffff";
-            e.currentTarget.style.color = "#14532d";
-          }}
-        >
-          <MapPin size={16} />
-          Ubicación
-        </a>
-      </motion.div>
+          {/* Ubicación */}
+          <a
+            href={locationUrl || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#ffffff",
+              color: "#14532d",
+              border: "2px solid #14532d",
+              padding: "12px 18px",
+              width: "140px",
+              borderRadius: "9999px",
+              fontWeight: "600",
+              fontSize: "0.9rem",
+              textDecoration: "none",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+              transition: "all 0.3s ease",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "6px",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#14532d";
+              e.currentTarget.style.color = "#ffffff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#ffffff";
+              e.currentTarget.style.color = "#14532d";
+            }}
+          >
+            <MapPin size={16} />
+            Ubicación
+          </a>
+        </motion.div>
+      )}
     </>
   );
 }
