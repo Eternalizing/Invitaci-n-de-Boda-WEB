@@ -9,7 +9,7 @@ export default function Hero() {
       className="relative flex flex-col justify-center items-center bg-cover bg-center"
       style={{
         backgroundImage: "url('/img/portadafoto2.png')",
-        backgroundColor: "#eaf6ef", // verde muy claro de fondo
+        backgroundColor: "#eaf6ef", // fondo verde muy claro
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -32,8 +32,8 @@ export default function Hero() {
           >
             <div
               className="relative rounded-full px-4 py-1 text-sm 
-                         text-[#2f3b2f] backdrop-blur-md bg-white/40 
-                         ring-1 ring-white/40 shadow-md shadow-[#b7e4c7]/30"
+                         text-[#2f3b2f] backdrop-blur-2xl bg-white/70 
+                         ring-1 ring-white/60 shadow-md shadow-[#b7e4c7]/40"
             >
               — Mateo 19:6
             </div>
@@ -49,7 +49,7 @@ export default function Hero() {
             <h1
               className="text-[#2f3b2f] text-2xl font-semibold tracking-tight sm:text-4xl 
                          py-6 px-8 rounded-3xl shadow-lg 
-                         backdrop-blur-xl bg-white/40 border border-white/40 
+                         backdrop-blur-2xl bg-white/75 border border-white/60 
                          ring-1 ring-white/50"
             >
               “Así que ya no son dos, sino una sola carne; por tanto, lo que Dios unió, no lo separe el hombre.”
@@ -59,7 +59,7 @@ export default function Hero() {
           {/* Subtítulo */}
           <motion.p
             className="mt-10 inline-block text-[#2f3b2f] text-lg font-medium sm:text-xl py-3 px-10 
-                       rounded-full shadow-md backdrop-blur-xl bg-white/40 border border-white/40 
+                       rounded-full shadow-md backdrop-blur-2xl bg-white/75 border border-white/60 
                        ring-1 ring-white/40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
