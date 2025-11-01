@@ -20,7 +20,7 @@ export default function Section2() {
 
         <div className="mt-4 text-center">
           <p className="text-sm text-[#3D5A40]/70 italic">Con inmensa alegría,</p>
-          <p className="mt-1 text-4xl sm:text-5xl font-bold text-[#2E7D32] drop-shadow-sm">
+          <p className="mt-1 text-4xl sm:text-5xl font-bold text-[#1B5E20] drop-shadow-sm">
             Leandro Padilla y Marli Rodríguez
           </p>
           <p className="mt-2 text-sm sm:text-base text-[#3D5A40]/80 max-w-lg mx-auto">
@@ -40,7 +40,7 @@ export default function Section2() {
             transition={{ duration: 0.8 }}
             className="relative lg:row-span-2"
           >
-            <div className="absolute inset-px rounded-lg bg-gradient-to-br from-[#2E7D32] via-[#4CAF50] to-[#A5D6A7] border-white/40 shadow-lg" />
+            <div className="absolute inset-px rounded-lg bg-gradient-to-br from-[#1B5E20] via-[#2E7D32] to-[#66BB6A] border-white/40 shadow-lg" />
             <div className="relative flex h-full flex-col overflow-hidden text-white">
               <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
                 <p className="mt-2 text-lg font-semibold text-white drop-shadow-md max-lg:text-center">
@@ -74,7 +74,7 @@ export default function Section2() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="relative max-lg:row-start-1"
           >
-            <div className="absolute inset-px rounded-lg bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#A5D6A7] max-lg:rounded-t-4xl border-white/40 shadow-lg" />
+            <div className="absolute inset-px rounded-lg bg-gradient-to-br from-[#1B5E20] via-[#2E7D32] to-[#66BB6A] max-lg:rounded-t-4xl border-white/40 shadow-lg" />
             <div className="relative flex h-full flex-col overflow-hidden text-white">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="text-lg font-semibold drop-shadow-md text-center">Invitación Especial</p>
@@ -92,16 +92,41 @@ export default function Section2() {
             </div>
           </motion.div>
 
-          {/* Recepción */}
+          {/* Sugerencias de regalo */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2"
+            className="relative lg:row-span-1"
           >
-            <div className="absolute inset-px rounded-lg bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#A5D6A7] border-white/40 shadow-lg" />
+            <div className="absolute inset-px rounded-lg bg-gradient-to-br from-[#1B5E20] via-[#2E7D32] to-[#66BB6A] border-white/40 shadow-lg max-lg:rounded-b-4xl lg:rounded-r-4xl" />
+            <div className="relative flex h-full flex-col overflow-hidden text-white">
+              <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10">
+                <p className="text-lg font-semibold drop-shadow-md text-center">Sugerencias de regalo</p>
+                <p className="mt-3 text-sm text-white/90 text-center leading-relaxed">
+                  El mejor regalo es tu presencia, pero si deseas tener un detalle con nosotros, te dejamos con cariño esta opción:
+                  <br />
+                  <strong>💌 Lista de obsequios próximamente</strong>
+                </p>
+              </div>
+              <div className="relative min-h-40 w-full grow flex items-center justify-center text-white/90 italic px-6 text-center">
+                “Gracias por acompañarnos en este momento tan especial.”
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Recepción (debajo de regalos) */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="relative lg:row-span-1"
+          >
+            <div className="absolute inset-px rounded-lg bg-gradient-to-br from-[#1B5E20] via-[#2E7D32] to-[#66BB6A] border-white/40 shadow-lg" />
             <div className="relative flex h-full flex-col overflow-hidden text-white">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="text-lg font-semibold drop-shadow-md text-center">Recepción</p>
@@ -124,30 +149,6 @@ export default function Section2() {
             </div>
           </motion.div>
 
-          {/* Regalos */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="relative lg:row-span-2"
-          >
-            <div className="absolute inset-px rounded-lg bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#A5D6A7] border-white/40 shadow-lg max-lg:rounded-b-4xl lg:rounded-r-4xl" />
-            <div className="relative flex h-full flex-col overflow-hidden text-white">
-              <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10">
-                <p className="text-lg font-semibold drop-shadow-md text-center">Sugerencias de regalo</p>
-                <p className="mt-3 text-sm text-white/90 text-center leading-relaxed">
-                  El mejor regalo es tu presencia, pero si deseas tener un detalle con nosotros, te dejamos con cariño esta opción:  
-                  <br />
-                  <strong>💌 Lista de obsequios próximamente</strong>
-                </p>
-              </div>
-              <div className="relative min-h-120 w-full grow flex items-center justify-center text-white/90 italic px-6 text-center">
-                “Gracias por acompañarnos en este momento tan especial.”
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </div>

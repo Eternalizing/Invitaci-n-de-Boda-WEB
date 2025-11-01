@@ -5,13 +5,14 @@ import Section3 from './components/section3'
 import Section4 from './components/section4'
 import FlowerCanvas from './components/FlowerCanvas'
 import MusicAndConfirm from './components/MusicPlayer'
-import Loader from './components/Loader' // 👈 nuevo import
-
+import Countdown from './components/countdown'
 import './App.css'
 
 function App() {
   return (
     <>
+      {/* Contador siempre visible y sobre todo */}
+      <Countdown />
 
       {/* Efecto de flores (detrás de todo) */}
       <FlowerCanvas

@@ -31,7 +31,7 @@ export default function Section3() {
         <div className="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <img
             alt="Leandro y Marli juntos"
-            src="/img/b6.jpg"
+            src="/img/portada.png"
             className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-228 object-cover"
           />
         </div>
